@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: hugo-deploy-gh-pages
-      uses: yangnyc1024/yangnyc1024.github.io@main
+      uses: yangnyc1024/gh-actions-hugo-deploy-gh-pages@master
       env:
         GIT_DEPLOY_KEY: ${{ secrets.GIT_DEPLOY_KEY }}
         HUGO_VERSION: "0.112.3"
