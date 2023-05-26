@@ -1,0 +1,19 @@
+on: push
+name: Deploy to GitHub Organization Pages
+jobs:
+  filtersForGitHubActions:
+    name: Filters for GitHub Actions
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Filters for GitHub Actions
+      uses: actions/bin/filter@master
+      with:
+        args: branch master
+    - name: hugo-deploy-gh-org-pages
+      uses: StevenACoffman/hugo-deploy-gh-org-pages@v1.0.3
+      env:
+        DEPLOY_KEY_PRIVATE: ${{ secrets.DEPLOY_KEY_PRIVATE }}
+        EMAIL: ${{ secrets.EMAIL }}
+        HUGO_VERSION: 0.112.3
+
