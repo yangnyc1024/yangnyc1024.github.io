@@ -114,6 +114,16 @@ body.light-mode .site-header {
   padding: 72px 0 48px;
 }
 
+.page-hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+}
+
+.page-hero-content {
+  max-width: 760px;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.3fr 0.9fr;
