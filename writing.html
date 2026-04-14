@@ -40,6 +40,15 @@ description: Technical writing and research notes on ML systems, GenAI, RAG, rec
             <a href="{{ post.url }}">Read post</a>
           </div>
         </article>
+      {% else %}
+        <article class="writing-card">
+          <p class="writing-date">No posts yet</p>
+          <h3>Markdown posts will appear here after Jekyll builds the site</h3>
+          <p>
+            If you are opening files directly from your local folder, Liquid tags and posts will not render.
+            View the built GitHub Pages site, or run a local Jekyll preview to see posts.
+          </p>
+        </article>
       {% endfor %}
     </div>
 

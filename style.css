@@ -101,6 +101,11 @@ body.light-mode .site-header {
   color: var(--text);
 }
 
+.nav-link.active {
+  color: var(--text);
+  font-weight: 700;
+}
+
 #theme-toggle {
   border: 1px solid var(--border);
   background: var(--card);
