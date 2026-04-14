@@ -6,7 +6,7 @@
   <title>Projects | Yang Lin</title>
   <meta
     name="description"
-    content="Selected projects by Yang Lin across GenAI, recommender systems, insurance ML, and ML platform workflows."
+    content="Personal projects by Yang Lin across autonomous agents, RAG platforms, recommender systems, and production-grade ML infrastructure."
   />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -27,11 +27,11 @@
   <main>
     <section class="hero page-hero">
       <div class="container page-hero-content">
-        <p class="eyebrow">Projects</p>
-        <h1>Selected work across ML, GenAI, and decision systems</h1>
+        <p class="eyebrow">Personal Projects</p>
+        <h1>Personal projects across LLM systems, RAG, and recommender systems</h1>
         <p class="hero-description">
-          This page collects a few representative projects. Visitors only see these details
-          after clicking into the Projects page from the homepage.
+          A selection of personal builds focused on autonomous agents, retrieval-augmented
+          generation, recommendation systems, and scalable inference workflows.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">
@@ -47,88 +47,105 @@
     <section id="projects" class="section section-alt">
       <div class="container">
         <div class="section-heading">
-          <p class="section-label">Projects</p>
-          <h2>Selected work</h2>
+          <p class="section-label">Personal Projects</p>
+          <h2>Selected builds</h2>
         </div>
 
         <div class="project-grid">
           <article class="project-card">
             <div class="project-top">
-              <span class="project-tag">GenAI / RAG</span>
-              <h3>LLM Twin / Knowledge Assistant</h3>
+              <span class="project-tag">Autonomous Agents</span>
+              <h3>LLM Twin</h3>
             </div>
             <p>
-              Built a knowledge-centric assistant that combines embeddings, vector search,
-              retrieval, and LLM reasoning to answer questions over curated personal or domain content.
+              Architected an end-to-end LLM-based agent system with modular microservices for data
+              ingestion, training, and inference using Python, Docker, and serverless components.
+              Built streaming and retrieval pipelines with Bytewax, Qdrant, and Redis, fine-tuned
+              open-source models with LoRA / QLoRA, and added RAG plus prompt monitoring workflows.
             </p>
             <div class="tech-stack">
-              <span>LangChain</span>
-              <span>Vector DB</span>
-              <span>Embeddings</span>
-              <span>RAG</span>
+              <span>Python</span>
+              <span>Docker</span>
+              <span>Bytewax</span>
+              <span>Qdrant</span>
+              <span>Redis</span>
+              <span>AWS SageMaker</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+              <span class="project-status">Details coming soon</span>
             </div>
           </article>
 
           <article class="project-card">
             <div class="project-top">
               <span class="project-tag">Recommender Systems</span>
-              <h3>Personalized Recommendation Pipeline</h3>
+              <h3>Personalized LLM Recommender System</h3>
             </div>
             <p>
-              Developed recommendation workflows covering retrieval, ranking, feature engineering,
-              and user interaction tracking for personalized product suggestions.
+              Designed and implemented an end-to-end recommendation system combining user behavior
+              signals, embeddings, vector retrieval, and LLM-based reasoning for personalized
+              content ranking. Added reranking, semantic similarity matching, and evaluation
+              workflows to improve recommendation quality iteratively.
             </p>
             <div class="tech-stack">
-              <span>Two-Tower</span>
-              <span>Ranking</span>
-              <span>Feature Store</span>
-              <span>Streamlit</span>
+              <span>Embeddings</span>
+              <span>Vector Retrieval</span>
+              <span>LLM Reranking</span>
+              <span>Semantic Search</span>
+              <span>Hit@K</span>
+              <span>Evaluation</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+              <span class="project-status">Details coming soon</span>
             </div>
           </article>
 
           <article class="project-card">
             <div class="project-top">
-              <span class="project-tag">Insurance ML</span>
-              <h3>Cyber Risk Pricing Model</h3>
+              <span class="project-tag">RAG Platform</span>
+              <h3>Second Brain AI Assistant</h3>
             </div>
             <p>
-              Built explainable pricing and risk modeling workflows using structured features,
-              GAM-style approaches, and operational business constraints for underwriting use cases.
+              Designed and built a production-ready RAG platform using Python, FastAPI, and ZenML
+              for context-aware question answering across heterogeneous data sources. Implemented
+              high-throughput ingestion, hybrid retrieval, prompt optimization, and modular
+              inference services for reliable multi-tenant GenAI workloads.
             </p>
             <div class="tech-stack">
-              <span>Explainable ML</span>
-              <span>Pricing</span>
-              <span>Risk Modeling</span>
-              <span>Databricks</span>
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>ZenML</span>
+              <span>LangChain</span>
+              <span>MongoDB</span>
+              <span>OpenAI Embeddings</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+              <span class="project-status">Details coming soon</span>
             </div>
           </article>
 
           <article class="project-card">
             <div class="project-top">
-              <span class="project-tag">ML Platform</span>
-              <h3>Batch Inference & Model Serving Workflows</h3>
+              <span class="project-tag">Collaborative Filtering</span>
+              <h3>Movie Recommendation Engine</h3>
             </div>
             <p>
-              Worked on scalable inference pipelines and MLflow-based deployment patterns
-              for production predictions, monitoring, and reusable model packaging.
+              Built a recommendation engine with Spark SQL and ALS collaborative filtering, then
+              optimized distributed training and inference for higher throughput. Also implemented
+              cold-start strategies to improve recommendation coverage for sparse-user scenarios.
             </p>
             <div class="tech-stack">
-              <span>MLflow</span>
-              <span>Spark</span>
-              <span>Batch Inference</span>
-              <span>MLOps</span>
+              <span>Spark SQL</span>
+              <span>ALS</span>
+              <span>Collaborative Filtering</span>
+              <span>Cold Start</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+              <span class="project-status">Details coming soon</span>
             </div>
           </article>
         </div>

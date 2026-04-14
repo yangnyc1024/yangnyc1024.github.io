@@ -325,6 +325,11 @@ body.light-mode .section-alt {
   font-weight: 600;
 }
 
+.project-status {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .contact-card {
   padding: 28px;
 }
