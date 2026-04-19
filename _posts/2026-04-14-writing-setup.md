@@ -1,32 +1,16 @@
 ---
 layout: post
-title: "Writing Setup for This Site"
-description: "A short note about using Markdown posts with GitHub Pages."
+title: "Rebuilding This Website"
+description: "A short update on rebuilding the site and moving older posts over."
 tags:
-  - GitHub Pages
-  - Markdown
+  - Website
+  - Updates
   - Writing
 ---
-This site now supports Markdown-based writing through GitHub Pages and Jekyll.
+I am currently rebuilding this website.
 
-To publish a new post, add a file under `_posts/` with a name like:
+As part of that process, older posts from the previous version are being moved here step by step.
 
-```text
-2026-04-14-my-new-post.md
-```
+Some sections may still feel incomplete for now, but the goal is to gradually bring the archive over and make the site easier to maintain going forward.
 
-Start the file with front matter:
-
-```yaml
----
-layout: post
-title: "My New Post"
-tags:
-  - LLMs
-  - RAG
----
-```
-
-After that, you can write the rest of the article in normal Markdown.
-
-This setup is a good fit for technical and research writing because it keeps the source lightweight, versioned, and easy to edit over time.
+Thanks for your patience while everything is being reorganized.
