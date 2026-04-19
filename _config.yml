@@ -1,5 +1,7 @@
 title: Yang Lin
 description: Applied ML Scientist and AI Engineer writing about ML systems, GenAI, RAG, and recommender systems.
 url: "https://yangnyc1024.github.io"
+timezone: America/New_York
+future: true
 markdown: kramdown
 permalink: /writing/:title/
