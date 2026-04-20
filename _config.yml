@@ -4,4 +4,8 @@ url: "https://yangnyc1024.github.io"
 timezone: America/New_York
 future: true
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  math_engine_opts:
+    preview: false
 permalink: /writing/:title/
