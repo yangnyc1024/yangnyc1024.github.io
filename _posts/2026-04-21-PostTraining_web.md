@@ -104,9 +104,21 @@ $$
 \log p_\theta\!\big(y_t^{(i)} \mid x^{(i)}, y_{<t}^{(i)}\big).
 $$
 
-In this objective, $\mathcal{L}_{\mathrm{SFT}}$ is the loss being minimized, $N$ is the number of prompt-response pairs, $T_i$ is the response length for example $i$, and the inner sum runs over response tokens. The same parameter vector $\theta$ is shared across all examples and all token positions.
+In this objective:
 
-在这个目标里，$\mathcal{L}_{\mathrm{SFT}}$ 表示要最小化的训练 loss，$N$ 是 prompt-response 对的数量，$T_i$ 是第 $i$ 个样本的 response 长度，内层求和沿着 response token 展开。同一个参数向量 $\theta$ 会在所有样本和所有 token 位置上共享。
+- $\mathcal{L}_{\mathrm{SFT}}$ is the loss being minimized.
+- $N$ is the number of prompt-response pairs.
+- $T_i$ is the response length for example $i$.
+- The inner sum runs over response tokens.
+- The same parameter vector $\theta$ is shared across all examples and token positions.
+
+在这个目标里：
+
+- $\mathcal{L}_{\mathrm{SFT}}$ 表示要最小化的训练 loss。
+- $N$ 是 prompt-response 对的数量。
+- $T_i$ 是第 $i$ 个样本的 response 长度。
+- 内层求和沿着 response token 展开。
+- 同一个参数向量 $\theta$ 会在所有样本和所有 token 位置上共享。
 
 This is why SFT is often compared to behavior cloning in RL. We do not ask the model to explore. We simply show what good behavior looks like and make it imitate.
 
@@ -166,9 +178,25 @@ $$
 \right].
 $$
 
-Here $\mathcal{L}_{\mathrm{DPO}}$ is again a loss to be minimized, $\mathcal{D}$ is a preference dataset, $y^{+}$ and $y^{-}$ denote the chosen and rejected responses for the same prompt $x$, $\pi_{\mathrm{ref}}$ is a frozen reference policy, $\beta$ controls how sharply the model separates the two responses, and $\sigma(\cdot)$ is the sigmoid function. Also, $\log \pi_\theta(y\mid x)$ means the log-probability of the whole response sequence $y$, i.e. the sum of token-level log-probabilities across the generated answer.
+Here:
 
-这里的 $\mathcal{L}_{\mathrm{DPO}}$ 同样表示要最小化的 loss，$\mathcal{D}$ 是偏好数据集，$y^{+}$ 和 $y^{-}$ 分别表示同一个 prompt $x$ 下的 chosen 与 rejected response，$\pi_{\mathrm{ref}}$ 是冻结的 reference policy，$\beta$ 控制模型把两个 response 拉开的力度，而 $\sigma(\cdot)$ 是 sigmoid 函数。另外，$\log \pi_\theta(y\mid x)$ 指的是整条 response 序列 $y$ 的对数概率，也就是回答中各个 token 对数概率之和。
+- $\mathcal{L}_{\mathrm{DPO}}$ is the loss being minimized.
+- $\mathcal{D}$ is a preference dataset.
+- $y^{+}$ and $y^{-}$ denote the chosen and rejected responses for the same prompt $x$.
+- $\pi_{\mathrm{ref}}$ is a frozen reference policy.
+- $\beta$ controls how sharply the model separates the two responses.
+- $\sigma(\cdot)$ is the sigmoid function.
+- $\log \pi_\theta(y\mid x)$ means the log-probability of the whole response sequence $y$, i.e. the sum of token-level log-probabilities across the generated answer.
+
+这里：
+
+- $\mathcal{L}_{\mathrm{DPO}}$ 同样表示要最小化的 loss。
+- $\mathcal{D}$ 是偏好数据集。
+- $y^{+}$ 和 $y^{-}$ 分别表示同一个 prompt $x$ 下的 chosen 与 rejected response。
+- $\pi_{\mathrm{ref}}$ 是冻结的 reference policy。
+- $\beta$ 控制模型把两个 response 拉开的力度。
+- $\sigma(\cdot)$ 是 sigmoid 函数。
+- $\log \pi_\theta(y\mid x)$ 指的是整条 response 序列 $y$ 的对数概率，也就是回答中各个 token 对数概率之和。
 
 The key idea is not “imitate this answer,” but “prefer this answer over that one.” Mathematically, DPO is best viewed as a classification-style loss over preference pairs rather than an on-policy RL objective. That makes DPO especially useful when the model is already roughly capable but keeps choosing the wrong tone, preference, stance, refusal pattern, or output style.
 
@@ -251,9 +279,27 @@ r_t(\theta)\hat{A}_t,\;
 r_t(\theta)=\frac{\pi_\theta(a_t\mid s_t)}{\pi_{\theta_{\mathrm{old}}}(a_t\mid s_t)}.
 $$
 
-Here $\mathcal{J}^{\mathrm{CLIP}}_{\mathrm{PPO}}$ is written as a surrogate objective to maximize; in implementation, one usually minimizes its negative. The expectation $\mathbb{E}_t[\cdot]$ is over sampled time steps, $s_t$ and $a_t$ denote the state and action at step $t$, $\theta_{\mathrm{old}}$ is the policy used to collect the current batch of trajectories, $\hat{A}_t$ is an estimated advantage, and $\epsilon$ is the clipping radius. The operator $\operatorname{clip}(\cdot)$ restricts the ratio to a small interval around 1. Crucially, $r_t(\theta)$ here is the new-to-old policy probability ratio, not the reward itself; reward information enters the update through $\hat{A}_t$.
+Here $\mathcal{J}^{\mathrm{CLIP}}_{\mathrm{PPO}}$ is written as a surrogate objective to maximize; in implementation, one usually minimizes its negative. For the notation:
 
-这里把 $\mathcal{J}^{\mathrm{CLIP}}_{\mathrm{PPO}}$ 写成一个要最大化的 surrogate objective；落到实现里，通常会最小化它的相反数。期望 $\mathbb{E}_t[\cdot]$ 是对采样时间步求平均，$s_t$ 和 $a_t$ 表示第 $t$ 步的状态与动作，$\theta_{\mathrm{old}}$ 是用于收集当前这批轨迹的旧策略参数，$\hat{A}_t$ 是 advantage 的估计量，而 $\epsilon$ 是 clipping 半径。算子 $\operatorname{clip}(\cdot)$ 的作用，是把比例限制在 1 附近的一个小区间内。最需要提醒的是：这里的 $r_t(\theta)$ 虽然写成 $r$，但它表示的是新旧策略的概率比，而不是 reward；reward 信息是通过 $\hat{A}_t$ 进入更新的。
+- $\mathbb{E}_t[\cdot]$ is the expectation over sampled time steps.
+- $s_t$ and $a_t$ denote the state and action at step $t$.
+- $\theta_{\mathrm{old}}$ is the policy used to collect the current batch of trajectories.
+- $\hat{A}_t$ is an estimated advantage.
+- $\epsilon$ is the clipping radius.
+- $\operatorname{clip}(\cdot)$ restricts the ratio to a small interval around 1.
+
+Crucially, $r_t(\theta)$ here is the new-to-old policy probability ratio, not the reward itself; reward information enters the update through $\hat{A}_t$.
+
+这里把 $\mathcal{J}^{\mathrm{CLIP}}_{\mathrm{PPO}}$ 写成一个要最大化的 surrogate objective；落到实现里，通常会最小化它的相反数。符号可以这样理解：
+
+- $\mathbb{E}_t[\cdot]$ 是对采样时间步求平均。
+- $s_t$ 和 $a_t$ 表示第 $t$ 步的状态与动作。
+- $\theta_{\mathrm{old}}$ 是用于收集当前这批轨迹的旧策略参数。
+- $\hat{A}_t$ 是 advantage 的估计量。
+- $\epsilon$ 是 clipping 半径。
+- $\operatorname{clip}(\cdot)$ 的作用，是把比例限制在 1 附近的一个小区间内。
+
+最需要提醒的是：这里的 $r_t(\theta)$ 虽然写成 $r$，但它表示的是新旧策略的概率比，而不是 reward；reward 信息是通过 $\hat{A}_t$ 进入更新的。
 
 Conceptually, PPO is best read as a clipped *policy-improvement term*. In full PPO implementations, one usually minimizes the negative objective above while also including a value loss and sometimes an entropy bonus; in LLM fine-tuning, KL regularization to a reference policy is also common.
 
@@ -340,9 +386,33 @@ This is the cleanest outcome-supervision sketch: the same normalized group-relat
 
 这是最简洁的 outcome-supervision 写法：同一个组内归一化奖励，会被广播到 response $y_i$ 的每个 token 上。在 DeepSeekMath 的原始表述里，GRPO 仍然是 PPO 风格的 clipped objective，而且很多实现还会显式加入相对于 reference policy 的 KL 正则。
 
-Here $\mathcal{J}^{\mathrm{simple}}_{\mathrm{GRPO}}$ is again written as an objective to maximize. The expectation is over prompts and groups of sampled responses, $G$ is the group size, $y_i$ is the $i$-th sampled response, $|y_i|$ is its length, and $y_{i,t}$ is its $t$-th token. The scalar $r_i$ is the reward assigned to the whole response $y_i$, $\bar r$ is the mean reward within the group, $\operatorname{std}(r_1,\dots,r_G)$ is the within-group standard deviation, $\epsilon$ is the PPO-style clipping radius, and $\varepsilon$ is a small constant for numerical stability. In this simplified presentation, every token in response $y_i$ shares the same response-level signal $\tilde r_i$. In other words, GRPO uses $\rho_{i,t}$ for the policy ratio and reserves $r_i$ for reward.
+Here $\mathcal{J}^{\mathrm{simple}}_{\mathrm{GRPO}}$ is again written as an objective to maximize. To keep the notation readable:
 
-这里的 $\mathcal{J}^{\mathrm{simple}}_{\mathrm{GRPO}}$ 同样写成一个要最大化的 objective。期望是对 prompt 以及对应的一组采样 response 求平均，$G$ 是组大小，$y_i$ 表示第 $i$ 个采样 response，$|y_i|$ 表示它的长度，而 $y_{i,t}$ 表示其中第 $t$ 个 token。标量 $r_i$ 是赋给整条 response $y_i$ 的奖励，$\bar r$ 是组内平均奖励，$\operatorname{std}(r_1,\dots,r_G)$ 是组内标准差，$\epsilon$ 是 PPO 风格的 clipping 半径，而 $\varepsilon$ 是数值稳定用的小常数。在这个简化写法里，response $y_i$ 中的每个 token 共享同一个 response-level 信号 $\tilde r_i$。也就是说，在 GRPO 里，策略概率比写成 $\rho_{i,t}$，而 $r_i$ 专门留给 reward。
+- $G$ is the group size.
+- $y_i$ is the $i$-th sampled response.
+- $|y_i|$ is the length of response $y_i$.
+- $y_{i,t}$ is the $t$-th token in response $y_i$.
+- $r_i$ is the scalar reward assigned to the whole response $y_i$.
+- $\bar r$ is the mean reward within the group.
+- $\operatorname{std}(r_1,\dots,r_G)$ is the within-group standard deviation.
+- $\epsilon$ is the PPO-style clipping radius.
+- $\varepsilon$ is a small constant for numerical stability.
+
+In this simplified presentation, every token in response $y_i$ shares the same response-level signal $\tilde r_i$. In other words, GRPO uses $\rho_{i,t}$ for the policy ratio and reserves $r_i$ for reward.
+
+这里的 $\mathcal{J}^{\mathrm{simple}}_{\mathrm{GRPO}}$ 同样写成一个要最大化的 objective。为了让符号更清楚，可以按下面理解：
+
+- $G$ 是组大小。
+- $y_i$ 表示第 $i$ 个采样 response。
+- $|y_i|$ 表示 response $y_i$ 的长度。
+- $y_{i,t}$ 表示 response $y_i$ 中第 $t$ 个 token。
+- $r_i$ 是赋给整条 response $y_i$ 的标量奖励。
+- $\bar r$ 是组内平均奖励。
+- $\operatorname{std}(r_1,\dots,r_G)$ 是组内标准差。
+- $\epsilon$ 是 PPO 风格的 clipping 半径。
+- $\varepsilon$ 是数值稳定用的小常数。
+
+在这个简化写法里，response $y_i$ 中的每个 token 共享同一个 response-level 信号 $\tilde r_i$。也就是说，在 GRPO 里，策略概率比写成 $\rho_{i,t}$，而 $r_i$ 专门留给 reward。
 
 A useful intuition is the following: if one sampled answer is better than the others in the same group, increase its probability; if it is worse, decrease it. The optimization is still token-wise, but the advantage now comes from group-relative normalized rewards rather than a learned critic.
 
@@ -358,16 +428,16 @@ A useful intuition is the following: if one sampled answer is better than the ot
 
 **One prompt, four candidates / 一个问题，四个候选**
 
-**Prompt / 问题**: `A store sells 3 apples for $6. How much do 5 apples cost at the same rate?`
+**Prompt / 问题**: `A store sells 3 apples for 6 dollars. How much do 5 apples cost at the same rate?`
 
-1. `$10`
-2. `$12`
-3. `$8`
-4. `$9`
+1. `10 dollars`
+2. `12 dollars`
+3. `8 dollars`
+4. `9 dollars`
 
-If the verifier says `$10` is correct, GRPO compares the four candidates relative to one another and pushes the model toward answers that look more like the winner.
+If the verifier says `10 dollars` is correct, GRPO compares the four candidates relative to one another and pushes the model toward answers that look more like the winner.
 
-如果验证器判断 `$10` 正确，GRPO 就会在这四个候选之间做相对比较，并把模型往更像“赢家”的回答分布上推。
+如果验证器判断 `10 dollars` 正确，GRPO 就会在这四个候选之间做相对比较，并把模型往更像“赢家”的回答分布上推。
 
 ### Minimal sketch / 极简示意
 
