@@ -311,7 +311,7 @@ Here $\mathcal{J}^{\mathrm{simple}}_{\mathrm{GRPO}}$ is again written as an obje
 
 - $G$ is the group size.
 - $y_i$ is the $i$-th sampled response.
-- $|y_i|$ is the length of response $y_i$.
+- $\lvert y_i \rvert$ is the length of response $y_i$.
 - $y_{i,t}$ is the $t$-th token in response $y_i$.
 - $r_i$ is the scalar reward assigned to the whole response $y_i$.
 - $\bar r$ is the mean reward within the group.
