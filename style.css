@@ -416,11 +416,13 @@ body.light-mode .section-alt {
   margin: 1.5rem 0;
   display: block;
   overflow-x: auto;
+  border: 1px solid rgba(21, 32, 51, 0.16);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .post-content th,
 .post-content td {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(21, 32, 51, 0.16);
   padding: 12px 14px;
   text-align: left;
   vertical-align: top;
@@ -429,6 +431,16 @@ body.light-mode .section-alt {
 .post-content th {
   background: var(--bg-soft);
   font-weight: 700;
+}
+
+body:not(.light-mode) .post-content table {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+body:not(.light-mode) .post-content th,
+body:not(.light-mode) .post-content td {
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .contact-card {
