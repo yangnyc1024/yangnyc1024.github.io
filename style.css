@@ -410,6 +410,27 @@ body.light-mode .section-alt {
   padding: 0;
 }
 
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  display: block;
+  overflow-x: auto;
+}
+
+.post-content th,
+.post-content td {
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.post-content th {
+  background: var(--bg-soft);
+  font-weight: 700;
+}
+
 .contact-card {
   padding: 28px;
 }
