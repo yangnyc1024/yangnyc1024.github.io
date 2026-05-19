@@ -6,6 +6,7 @@ categories:
   - LLM
   - Attention
   - PyTorch
+writing_category: algorithm
 tags:
   - attention
   - transformer

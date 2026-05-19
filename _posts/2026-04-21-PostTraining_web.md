@@ -5,6 +5,7 @@ date: 2026-04-21 12:00:00 +0800
 categories:
   - LLM
   - Post-Training
+writing_category: ai
 tags:
   - llm
   - post-training
