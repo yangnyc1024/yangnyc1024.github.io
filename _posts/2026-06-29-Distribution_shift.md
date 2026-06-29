@@ -60,21 +60,21 @@ A supervised learning problem can be described using three probability distribut
 
 - **Feature Distribution**
 
-\[
+$$
 P(X)
-\]
+$$
 
 - **Target Distribution**
 
-\[
+$$
 P(Y)
-\]
+$$
 
 - **Conditional Relationship**
 
-\[
+$$
 P(Y|X)
-\]
+$$
 
 Almost every production shift can be understood as changes in one (or more) of these distributions.
 
@@ -84,15 +84,15 @@ Almost every production shift can be understood as changes in one (or more) of t
 
 Covariate Shift occurs when
 
-\[
+$$
 P(X)
-\]
+$$
 
 changes while
 
-\[
+$$
 P(Y|X)
-\]
+$$
 
 remains unchanged.
 
@@ -124,9 +124,9 @@ The underlying fraud mechanism has not.
 
 Label Shift occurs when
 
-\[
+$$
 P(Y)
-\]
+$$
 
 changes.
 
@@ -161,9 +161,9 @@ A model may still rank samples correctly while becoming poorly calibrated.
 
 Concept Drift occurs when
 
-\[
+$$
 P(Y|X)
-\]
+$$
 
 changes.
 
@@ -266,9 +266,9 @@ Although the features appear similar, the underlying data-generating process is 
 
 | Shift Type | Distribution Changed | Typical Example |
 |------------|----------------------|-----------------|
-| **Covariate Shift** | \(P(X)\) | Customer population changes |
-| **Label Shift** | \(P(Y)\) | Claim frequency increases |
-| **Concept Drift** | \(P(Y\|X)\) | Existing features become less predictive |
+| **Covariate Shift** | $P(X)$ | Customer population changes |
+| **Label Shift** | $P(Y)$ | Claim frequency increases |
+| **Concept Drift** | $P(Y\|X)$ | Existing features become less predictive |
 | **Temporal Drift** | Multiple distributions | Production data evolves over time |
 | **Domain Shift** | Entire environment | Different country or industry |
 
