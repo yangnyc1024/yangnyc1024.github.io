@@ -6,7 +6,7 @@ categories:
   - Statistics
   - Linear Models
   - Interview Prep
-writing_category: algorithm
+writing_category: machine-learning
 tags: [machine-learning, statistics, interview-prep, linear-models]
 reading_time: "~30 min"
 description: "A field guide to linear regression: the two-tier assumption structure, three derivations of OLS, why squared loss, closed-form vs. gradient descent, inference and diagnostics, and the bias-variance case for Ridge and Lasso."
