@@ -9,7 +9,6 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
     <h1>Notes on ML systems, GenAI, and building things that last</h1>
     <p class="hero-description">
       This is where I collect essays, technical notes, and reflections from projects, research, and day-to-day work.
-      The site is currently being rebuilt, so older posts are still being moved here over time.
     </p>
   </div>
 </section>
@@ -18,7 +17,6 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
 {% assign ml_posts = site.posts | where: "writing_category", "machine-learning" %}
 {% assign algorithm_posts = site.posts | where: "writing_category", "algorithm" %}
 {% assign ai_system_posts = site.posts | where: "writing_category", "ai-system" %}
-{% assign update_posts = site.posts | where: "writing_category", "updates" %}
 
 <section class="section section-alt writing-categories">
   <div class="container">
@@ -32,7 +30,6 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
       <a href="#machine-learning">Machine Learning</a>
       <a href="#algorithm">Algorithm</a>
       <a href="#ai-system">AI System</a>
-      <a href="#updates">Updates</a>
     </nav>
 
     <div class="writing-category-list">
@@ -74,7 +71,7 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
       <section class="writing-category" id="machine-learning">
         <div class="writing-category-heading">
           <p class="section-label">Machine Learning</p>
-          <h3>Classical ML, production systems, and MLOps</h3>
+          <h3>Model behavior, evaluation, and why ML breaks in practice</h3>
         </div>
 
         <div class="writing-grid">
@@ -100,7 +97,7 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
             <article class="writing-card writing-card-empty">
               <p class="writing-date">Coming soon</p>
               <h4>Machine learning notes will appear here</h4>
-              <p>Posts about classical ML, production systems, and MLOps will be collected in this category.</p>
+              <p>Posts about model behavior, evaluation, and why ML breaks in practice will be collected in this category.</p>
             </article>
           {% endfor %}
         </div>
@@ -171,41 +168,6 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
               <p class="writing-date">Coming soon</p>
               <h4>AI system notes will appear here</h4>
               <p>Posts about RAG, ranking, recommendation, and production ML architecture will be collected in this category.</p>
-            </article>
-          {% endfor %}
-        </div>
-      </section>
-
-      <section class="writing-category" id="updates">
-        <div class="writing-category-heading">
-          <p class="section-label">Updates</p>
-          <h3>Notes on the site itself</h3>
-        </div>
-
-        <div class="writing-grid">
-          {% for post in update_posts %}
-            <article class="writing-card">
-              <p class="writing-date">{{ post.date | date: "%B %-d, %Y" }}</p>
-              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-              {% if post.excerpt %}
-                <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
-              {% endif %}
-              {% if post.tags and post.tags.size > 0 %}
-                <div class="tech-stack">
-                  {% for tag in post.tags %}
-                    <span>{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
-              <div class="project-links">
-                <a href="{{ post.url }}">Read post</a>
-              </div>
-            </article>
-          {% else %}
-            <article class="writing-card writing-card-empty">
-              <p class="writing-date">Coming soon</p>
-              <h4>Site updates will appear here</h4>
-              <p>Notes about changes to this site will be collected in this category.</p>
             </article>
           {% endfor %}
         </div>
