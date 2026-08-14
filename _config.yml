@@ -9,3 +9,5 @@ kramdown:
   math_engine_opts:
     preview: false
 permalink: /writing/:title/
+plugins:
+  - jekyll-sitemap
