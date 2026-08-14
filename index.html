@@ -1,193 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yang Lin | Applied ML Scientist • AI Engineer</title>
-  <meta
-    name="description"
-    content="Yang Lin is an Applied ML Scientist and AI Engineer building production-grade ML, LLM, and RAG systems across Azure, AWS, and Databricks."
-  />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="#hero">Yang Lin</a>
-      <nav>
-        <a class="nav-link active" href="#about">About</a>
-        <a class="nav-link" href="/projects/">Projects</a>
-        <a class="nav-link" href="/writing/">Writing</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </nav>
-      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+---
+layout: default
+title: "Applied ML Scientist • AI Engineer"
+description: "Yang Lin is an Applied ML Scientist and AI Engineer building production-grade ML, LLM, and RAG systems across Azure, AWS, and Databricks."
+permalink: /
+---
+<section id="hero" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">Applied ML Scientist • AI Engineer • GenAI Systems</p>
+      <h1>
+        Building production-grade
+        <span class="gradient-text">ML and GenAI systems</span>
+      </h1>
+      <p class="hero-description">
+        Applied ML Scientist / AI Engineer with 5+ years of experience building and deploying
+        scalable ML, LLM, and RAG systems. I work across the full ML lifecycle from data pipelines
+        and model development to low-latency deployment, evaluation, and monitoring on Azure, AWS,
+        and Databricks.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/projects/">View Projects</a>
+        <a class="btn btn-secondary" href="/writing/">Read Writing</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/yang-lin-ny/" target="_blank" rel="noopener noreferrer">
+          Connect on LinkedIn
+        </a>
+      </div>
+
+      <div class="badges">
+        <span>Python</span>
+        <span>Azure</span>
+        <span>AWS</span>
+        <span>Databricks</span>
+        <span>Spark</span>
+        <span>MLflow</span>
+        <span>LLM Fine-tuning</span>
+        <span>RAG</span>
+        <span>LoRA / PEFT</span>
+        <span>xAI</span>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="eyebrow">Applied ML Scientist • AI Engineer • GenAI Systems</p>
-          <h1>
-            Building production-grade
-            <span class="gradient-text">ML and GenAI systems</span>
-          </h1>
-          <p class="hero-description">
-            Applied ML Scientist / AI Engineer with 5+ years of experience building and deploying
-            scalable ML, LLM, and RAG systems. I work across the full ML lifecycle from data pipelines
-            and model development to low-latency deployment, evaluation, and monitoring on Azure, AWS,
-            and Databricks.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="/projects/">View Projects</a>
-            <a class="btn btn-secondary" href="/writing/">Read Writing</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/yang-lin-ny/" target="_blank" rel="noopener noreferrer">
-              Connect on LinkedIn
-            </a>
-          </div>
-
-          <div class="badges">
-            <span>Python</span>
-            <span>Azure</span>
-            <span>AWS</span>
-            <span>Databricks</span>
-            <span>Spark</span>
-            <span>MLflow</span>
-            <span>LLM Fine-tuning</span>
-            <span>RAG</span>
-            <span>LoRA / PEFT</span>
-            <span>xAI</span>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <img
-            src="assets/profile.jpg?v=20260814"
-            alt="Portrait of Yang Lin"
-            class="profile-image"
-          />
-          <div class="hero-card-content">
-            <h2>Yang Lin</h2>
-            <p>Applied ML Scientist / AI Engineer</p>
-            <ul>
-              <li>Production LLM, RAG, and fine-tuning systems</li>
-              <li>Large-scale ML on Azure, AWS, and Databricks</li>
-              <li>Explainable AI for high-stakes decision workflows</li>
-              <li>Recommendation, ranking, and decision intelligence</li>
-            </ul>
-          </div>
-        </div>
+    <div class="hero-card">
+      <img
+        src="/assets/profile.jpg?v=20260814"
+        alt="Portrait of Yang Lin"
+        class="profile-image"
+      />
+      <div class="hero-card-content">
+        <h2>Yang Lin</h2>
+        <p>Applied ML Scientist / AI Engineer</p>
+        <ul>
+          <li>Production LLM, RAG, and fine-tuning systems</li>
+          <li>Large-scale ML on Azure, AWS, and Databricks</li>
+          <li>Explainable AI for high-stakes decision workflows</li>
+          <li>Recommendation, ranking, and decision intelligence</li>
+        </ul>
       </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-label">About</p>
-          <h2>From research depth to production impact</h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="card">
-            <p>
-              I currently work as an AI Research Scientist building production-grade ML and GenAI
-              systems for high-stakes enterprise decision workflows. My work spans LLM applications,
-              retrieval systems, explainable modeling, and reliable data and inference pipelines.
-            </p>
-            <p>
-              Before that, I worked in academia as a visiting researcher / adjunct professor and
-              completed a Ph.D. in Applied Mathematics. That background still shapes how I build:
-              rigorous modeling, strong evaluation, and practical systems that hold up in real-world use.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>What I bring</h3>
-            <ul class="clean-list">
-              <li>LLM fine-tuning with LoRA, PEFT, and QLoRA</li>
-              <li>Retrieval-augmented generation and grounding evaluation</li>
-              <li>Large-scale ML pipelines with Spark, MLflow, and Databricks</li>
-              <li>Low-latency inference services and real-time retrieval systems</li>
-              <li>Explainable AI with SHAP / LIME for high-stakes decisions</li>
-              <li>Recommendation, optimization, and risk-aware modeling</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-label">Focus</p>
-          <h2>Core strengths</h2>
-        </div>
-
-        <div class="focus-grid">
-          <div class="card">
-            <h3>Production ML Platforms</h3>
-            <p>
-              End-to-end training, batch inference, model packaging, monitoring, and versioning
-              for large-scale ML systems running in production environments.
-            </p>
-          </div>
-          <div class="card">
-            <h3>LLM + RAG Systems</h3>
-            <p>
-              Grounded copilots, retrieval pipelines, prompt orchestration, hallucination evaluation,
-              and low-latency generation workflows for interactive decision support.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Fine-Tuning & Inference</h3>
-            <p>
-              Llama-based fine-tuning with LoRA / PEFT, quantized deployment, and scalable inference
-              optimization to balance quality, cost, and latency.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Explainability & Risk Modeling</h3>
-            <p>
-              Interpretable ML and explainability workflows that support adoption, transparency,
-              and trust in high-stakes environments.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-label">Contact</p>
-          <h2>Let’s connect</h2>
-        </div>
-
-        <div class="contact-card">
-          <p>
-            I’m interested in senior ML / AI roles focused on GenAI systems, production ML,
-            LLM platforms, recommender systems, and decision-support products with real operational impact.
-          </p>
-
-          <div class="contact-links">
-            <a class="btn btn-primary" href="mailto:linyangnyc@gmail.com">Email</a>
-            <a class="btn btn-secondary" href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/yang-lin-ny/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© 2026 Yang Lin</p>
-      <p>Built with GitHub Pages</p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-label">About</p>
+      <h2>From research depth to production impact</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="card">
+        <p>
+          I currently work as an AI Research Scientist building production-grade ML and GenAI
+          systems for high-stakes enterprise decision workflows. My work spans LLM applications,
+          retrieval systems, explainable modeling, and reliable data and inference pipelines.
+        </p>
+        <p>
+          Before that, I worked in academia as a visiting researcher / adjunct professor and
+          completed a Ph.D. in Applied Mathematics. That background still shapes how I build:
+          rigorous modeling, strong evaluation, and practical systems that hold up in real-world use.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>What I bring</h3>
+        <ul class="clean-list">
+          <li>LLM fine-tuning with LoRA, PEFT, and QLoRA</li>
+          <li>Retrieval-augmented generation and grounding evaluation</li>
+          <li>Large-scale ML pipelines with Spark, MLflow, and Databricks</li>
+          <li>Low-latency inference services and real-time retrieval systems</li>
+          <li>Explainable AI with SHAP / LIME for high-stakes decisions</li>
+          <li>Recommendation, optimization, and risk-aware modeling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-label">Focus</p>
+      <h2>Core strengths</h2>
+    </div>
+
+    <div class="focus-grid">
+      <div class="card">
+        <h3>Production ML Platforms</h3>
+        <p>
+          End-to-end training, batch inference, model packaging, monitoring, and versioning
+          for large-scale ML systems running in production environments.
+        </p>
+      </div>
+      <div class="card">
+        <h3>LLM + RAG Systems</h3>
+        <p>
+          Grounded copilots, retrieval pipelines, prompt orchestration, hallucination evaluation,
+          and low-latency generation workflows for interactive decision support.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Fine-Tuning & Inference</h3>
+        <p>
+          Llama-based fine-tuning with LoRA / PEFT, quantized deployment, and scalable inference
+          optimization to balance quality, cost, and latency.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Explainability & Risk Modeling</h3>
+        <p>
+          Interpretable ML and explainability workflows that support adoption, transparency,
+          and trust in high-stakes environments.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-label">Contact</p>
+      <h2>Let’s connect</h2>
+    </div>
+
+    <div class="contact-card">
+      <p>
+        I’m interested in senior ML / AI roles focused on GenAI systems, production ML,
+        LLM platforms, recommender systems, and decision-support products with real operational impact.
+      </p>
+
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:linyangnyc@gmail.com">Email</a>
+        <a class="btn btn-secondary" href="https://github.com/yangnyc1024" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/yang-lin-ny/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
