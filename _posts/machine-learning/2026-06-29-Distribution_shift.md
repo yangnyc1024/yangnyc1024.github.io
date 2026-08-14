@@ -6,7 +6,7 @@ categories:
   - Machine Learning
   - Production ML
   - MLOps
-writing_category: ai
+writing_category: machine-learning
 tags:
   - distribution shift
   - covariate shift

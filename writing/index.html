@@ -14,9 +14,10 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
   </div>
 </section>
 
-{% assign ai_posts = site.posts | where: "writing_category", "ai" %}
+{% assign genai_posts = site.posts | where: "writing_category", "genai" %}
+{% assign ml_posts = site.posts | where: "writing_category", "machine-learning" %}
 {% assign algorithm_posts = site.posts | where: "writing_category", "algorithm" %}
-{% assign system_design_posts = site.posts | where: "writing_category", "system-design" %}
+{% assign ai_system_posts = site.posts | where: "writing_category", "ai-system" %}
 {% assign update_posts = site.posts | where: "writing_category", "updates" %}
 
 <section class="section section-alt writing-categories">
@@ -27,21 +28,22 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
     </div>
 
     <nav class="category-nav" aria-label="Writing categories">
-      <a href="#ai">AI</a>
+      <a href="#genai">GenAI</a>
+      <a href="#machine-learning">Machine Learning</a>
       <a href="#algorithm">Algorithm</a>
-      <a href="#system-design">System Design</a>
+      <a href="#ai-system">AI System</a>
       <a href="#updates">Updates</a>
     </nav>
 
     <div class="writing-category-list">
-      <section class="writing-category" id="ai">
+      <section class="writing-category" id="genai">
         <div class="writing-category-heading">
-          <p class="section-label">AI</p>
+          <p class="section-label">GenAI</p>
           <h3>LLMs, GenAI, and model behavior</h3>
         </div>
 
         <div class="writing-grid">
-          {% for post in ai_posts %}
+          {% for post in genai_posts %}
             <article class="writing-card">
               <p class="writing-date">{{ post.date | date: "%B %-d, %Y" }}</p>
               <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
@@ -62,8 +64,43 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
           {% else %}
             <article class="writing-card writing-card-empty">
               <p class="writing-date">Coming soon</p>
-              <h4>AI notes will appear here</h4>
+              <h4>GenAI notes will appear here</h4>
               <p>Posts about LLMs, GenAI, and model behavior will be collected in this category.</p>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="writing-category" id="machine-learning">
+        <div class="writing-category-heading">
+          <p class="section-label">Machine Learning</p>
+          <h3>Classical ML, production systems, and MLOps</h3>
+        </div>
+
+        <div class="writing-grid">
+          {% for post in ml_posts %}
+            <article class="writing-card">
+              <p class="writing-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              {% if post.excerpt %}
+                <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+              {% endif %}
+              {% if post.tags and post.tags.size > 0 %}
+                <div class="tech-stack">
+                  {% for tag in post.tags %}
+                    <span>{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <div class="project-links">
+                <a href="{{ post.url }}">Read post</a>
+              </div>
+            </article>
+          {% else %}
+            <article class="writing-card writing-card-empty">
+              <p class="writing-date">Coming soon</p>
+              <h4>Machine learning notes will appear here</h4>
+              <p>Posts about classical ML, production systems, and MLOps will be collected in this category.</p>
             </article>
           {% endfor %}
         </div>
@@ -104,14 +141,14 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
         </div>
       </section>
 
-      <section class="writing-category" id="system-design">
+      <section class="writing-category" id="ai-system">
         <div class="writing-category-heading">
-          <p class="section-label">System Design</p>
+          <p class="section-label">AI System</p>
           <h3>Architecture, retrieval, ranking, and production ML systems</h3>
         </div>
 
         <div class="writing-grid">
-          {% for post in system_design_posts %}
+          {% for post in ai_system_posts %}
             <article class="writing-card">
               <p class="writing-date">{{ post.date | date: "%B %-d, %Y" }}</p>
               <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
@@ -132,7 +169,7 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
           {% else %}
             <article class="writing-card writing-card-empty">
               <p class="writing-date">Coming soon</p>
-              <h4>System design notes will appear here</h4>
+              <h4>AI system notes will appear here</h4>
               <p>Posts about RAG, ranking, recommendation, and production ML architecture will be collected in this category.</p>
             </article>
           {% endfor %}

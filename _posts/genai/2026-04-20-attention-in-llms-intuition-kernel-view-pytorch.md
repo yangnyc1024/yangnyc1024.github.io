@@ -6,7 +6,7 @@ categories:
   - LLM
   - Attention
   - PyTorch
-writing_category: ai
+writing_category: genai
 tags:
   - attention
   - transformer
