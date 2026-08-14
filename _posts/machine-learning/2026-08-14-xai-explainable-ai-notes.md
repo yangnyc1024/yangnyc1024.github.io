@@ -78,7 +78,7 @@ $$
 
   i.e. Kernel SHAP is a correctly-weighted special case of LIME's loss function.
 - **Cost**: LIME just fits one local regression; exact SHAP is exponentially expensive (see "sublinear" below).
-- **Scope**: LIME is purely local; SHAP values also aggregate into global feature importance ($I_j = \frac1n\sum_i |\phi_j^{(i)}|$) and dependence plots.
+- **Scope**: LIME is purely local; SHAP values also aggregate into global feature importance ($I_j = \frac1n\sum_i \|\phi_j^{(i)}\|$) and dependence plots.
 
 *一句话总结——LIME 靠局部采样拟合简单模型，没有唯一性保证、结果不稳定；SHAP 靠博弈论公理保证唯一性和可加性，但计算更贵。Kernel SHAP 本质是"权重调对了"的 LIME，这是两者被"统一"的关键。*
 
