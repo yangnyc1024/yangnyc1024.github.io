@@ -2,6 +2,7 @@
 layout: post
 title: "Rebuilding This Website"
 description: "A short update on rebuilding the site and moving older posts over."
+writing_category: updates
 tags:
   - Website
   - Updates

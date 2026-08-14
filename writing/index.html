@@ -17,6 +17,7 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
 {% assign ai_posts = site.posts | where: "writing_category", "ai" %}
 {% assign algorithm_posts = site.posts | where: "writing_category", "algorithm" %}
 {% assign system_design_posts = site.posts | where: "writing_category", "system-design" %}
+{% assign update_posts = site.posts | where: "writing_category", "updates" %}
 
 <section class="section section-alt writing-categories">
   <div class="container">
@@ -29,6 +30,7 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
       <a href="#ai">AI</a>
       <a href="#algorithm">Algorithm</a>
       <a href="#system-design">System Design</a>
+      <a href="#updates">Updates</a>
     </nav>
 
     <div class="writing-category-list">
@@ -132,6 +134,41 @@ description: Essays, technical notes, and research reflections on ML systems, Ge
               <p class="writing-date">Coming soon</p>
               <h4>System design notes will appear here</h4>
               <p>Posts about RAG, ranking, recommendation, and production ML architecture will be collected in this category.</p>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="writing-category" id="updates">
+        <div class="writing-category-heading">
+          <p class="section-label">Updates</p>
+          <h3>Notes on the site itself</h3>
+        </div>
+
+        <div class="writing-grid">
+          {% for post in update_posts %}
+            <article class="writing-card">
+              <p class="writing-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              {% if post.excerpt %}
+                <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+              {% endif %}
+              {% if post.tags and post.tags.size > 0 %}
+                <div class="tech-stack">
+                  {% for tag in post.tags %}
+                    <span>{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <div class="project-links">
+                <a href="{{ post.url }}">Read post</a>
+              </div>
+            </article>
+          {% else %}
+            <article class="writing-card writing-card-empty">
+              <p class="writing-date">Coming soon</p>
+              <h4>Site updates will appear here</h4>
+              <p>Notes about changes to this site will be collected in this category.</p>
             </article>
           {% endfor %}
         </div>
